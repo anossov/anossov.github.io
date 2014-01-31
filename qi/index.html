@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+    text {
+        font: 12px sans-serif;
+    }
+
+    h1 {
+        font: 30px sans-serif;
+        font-weight: normal;
+        margin-top: 20px;
+        margin-left: 140px;
+        color: #666;
+    }
+
+    .series {
+        fill: #eee;
+    }
+
+    .series-letter {
+        fill: #ddd;
+        font-size: 25px;
+    }
+
+    .tick {
+        fill: #c99;
+    }
+
+    .tick-span {
+        fill: #caa;
+    }
+
+</style>
+<body>
+<h1>Appearances of QI panelists</h1>
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="data.js"></script>
+<script>
+
+    var row_height = 25;
+
+    var margin = {top: 50, right: 50, bottom: 30, left: 130},
+            width = 1900 - margin.left - margin.right,
+            height = PANELISTS.length * row_height - margin.top - margin.bottom;
+
+    var svg = d3.select("body").append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+    PANELISTS.push({
+        name: 'Alan Davies',
+        episodes: d3.range(EPISODES.length - 1)
+    });
+
+
+    PANELISTS.sort(function (a, b) {
+        if (a.episodes.length == b.episodes.length) {
+            if (a.episodes[0] < b.episodes[0]) {
+                return -1;
+            }
+            if (a.episodes[0] > b.episodes[0]) {
+                return 1;
+            }
+
+            return 0
+        }
+        if (a.episodes.length < b.episodes.length) {
+            return 1;
+        } else {
+            return -1;
+        }
+    });
+
+    var panelist_names = PANELISTS.map(function (d) {return d.name;});
+
+    var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1).domain(d3.range(EPISODES.length));
+    var y = d3.scale.ordinal().rangeRoundBands([0, height], 0.1).domain(panelist_names)
+
+    var enumerated_episodes_no_pilot = d3.zip(d3.range(1, EPISODES.length), EPISODES.slice(1));
+    var first_letter = function (d) {
+        if (d[1].substr(0, 3) == 'The') {
+            return d[1][4];
+        } else {
+            return d[1][0];
+        }
+    };
+    var series_list = d3.nest().key(first_letter).entries(enumerated_episodes_no_pilot);
+
+    var series = svg.selectAll('series')
+            .data(series_list)
+            .enter()
+            .append('g')
+            .attr('transform', function (d) {
+                return 'translate(' + x(d.values[0][0]) + ',0)';
+            });
+    series.append('rect')
+            .attr('class', 'series')
+            .attr('x', 0)
+            .attr('y', -20)
+            .attr('width', 1)
+            .attr('height', height);
+    series.append('text')
+            .text(function (d) {
+                return d.key
+            })
+            .attr('x', 10)
+            .attr('y', -10)
+            .attr('class', 'series-letter');
+
+    var panelist = svg.selectAll('.panelist')
+            .data(PANELISTS)
+            .enter()
+            .append('g')
+            .attr('class', 'panelist');
+
+    panelist.attr('transform', function (d) {
+        return 'translate(0,' + y(d.name) + ')';
+    });
+
+    panelist.append('text')
+            .attr('x', function (d) {
+                return x(d.episodes[0]) - 10;
+            })
+            .attr('text-anchor', 'end')
+            .text(function (d) {
+                return d.name;
+            });
+
+    panelist.append('rect')
+            .attr('class', 'tick-span')
+            .attr('x', function (d) {
+                return x(d.episodes[0]) + (x.rangeBand() / 2);
+            })
+            .attr('y', -4)
+            .attr('height', 1)
+            .attr('width', function (d) {
+                return x(d.episodes[d.episodes.length - 1]) - x(d.episodes[0]);
+            })
+
+    panelist.append('g')
+            .selectAll('.tick')
+            .data(function (d) {
+                return d.episodes;
+            }).enter()
+            .append('rect')
+            .attr('class', 'tick')
+            .attr('x', function (d) {
+                return x(d) + (x.rangeBand() / 2);
+            })
+            .attr('y', -10)
+            .attr('height', 12)
+            .attr('width', 1);
+</script>
+</body>
