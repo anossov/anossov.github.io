@@ -41,20 +41,13 @@
 
     var margin = {top: 50, right: 50, bottom: 30, left: 130},
             width = 1900 - margin.left - margin.right,
-            height = PANELISTS.length * row_height - margin.top - margin.bottom;
+            height = PANELISTS.length * row_height - row_height - margin.top - margin.bottom;
 
     var svg = d3.select("body").append("svg")
             .attr("width", width + margin.left + margin.right)
             .attr("height", height + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-
-    PANELISTS.push({
-        name: 'Alan Davies',
-        episodes: d3.range(EPISODES.length - 1)
-    });
-
 
     PANELISTS.sort(function (a, b) {
         if (a.episodes.length == b.episodes.length) {
