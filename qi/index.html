@@ -3,6 +3,10 @@
     <meta charset="utf-8">
     <title>QI panellist appearances</title>
 <style>
+    body {
+        font-family: sans-serif;
+    }
+
     text {
         font: 12px sans-serif;
     }
@@ -28,8 +32,36 @@
         fill: #c99;
     }
 
+    .episode {
+        fill: #c99;
+        cursor: pointer;
+    }
+
     .tick-span {
         fill: #caa;
+    }
+
+    #episode-card {
+        position: absolute;
+        pointer-events: none;
+        background-color: white;
+        border-radius: 4px;
+        padding: 1em;
+        border: solid gray 1px;
+    }
+
+    #episode-card i {
+        color: #aaa;
+    }
+
+    #episode-card ul {
+        padding-left: 1em;
+        margin-bottom: 0;
+    }
+
+    #episode-card li {
+        list-style-type: none;
+        line-height: 24px;
     }
 
 </style>
@@ -46,6 +78,8 @@
 </head>
 <body>
 <h1>Appearances of QI panellists</h1>
+<div id="episode-card" style="display: none"></div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="data.js"></script>
 <script>
@@ -81,6 +115,14 @@
     });
 
     var panelist_names = PANELISTS.map(function (d) {return d.name;});
+    var panels = EPISODES.map(function (d) {return [];});
+    PANELISTS.forEach(function (p) {
+        p.episodes.forEach(function (e) {
+           panels[e].push(p.name);
+        });
+    });
+
+    console.log(panels);
 
     var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1).domain(d3.range(EPISODES.length));
     var y = d3.scale.ordinal().rangeRoundBands([0, height], 0.1).domain(panelist_names)
@@ -159,4 +201,37 @@
             .attr('y', -10)
             .attr('height', 12)
             .attr('width', 1);
+
+    var episode = svg.selectAll('.episode')
+            .data(d3.range(EPISODES.length - 1))
+            .enter()
+            .append('rect')
+            .attr('class', 'episode');
+
+    var card = d3.select('#episode-card');
+    var body = d3.select('body')[0][0];
+
+    episode
+            .attr('x', function(d) {return x(d) + (x.rangeBand() / 2) - 2;})
+            .attr('y', -7)
+            .attr('width', 5)
+            .attr('height', height)
+            .style('fill-opacity', 0)
+            .on('mouseover', function(d, i) {
+                d3.select(this).style('fill-opacity', 0.2);
+                var c = d3.mouse(body);
+                card.style('display', 'block');
+                card.style('left', (c[0] + 40) + 'px');
+                card.style('top', c[1] + 'px');
+                card.html('<i>Episode ' + d + ':</i> ' + EPISODES[d] + '<ul><li>' + panels[d].join('</li><li>') + '</li></ul>');
+            })
+            .on('mousemove', function(d, i) {
+                var c = d3.mouse(body);
+                card.style('left', (c[0] + 40) + 'px');
+                card.style('top', c[1] + 'px');
+            })
+            .on('mouseout', function(d, i) {
+                d3.select(this).style('fill-opacity', 0);
+                card.style('display', 'none');
+            });
 </script>
