@@ -168,7 +168,8 @@ var EPISODES = [
     "Lucky Losers", 
     "Little and Large", 
     "Long Lost", 
-    "Landmarks"
+    "Landmarks",
+    "N series placeholder"
 ];
 var PANELISTS = [
     {

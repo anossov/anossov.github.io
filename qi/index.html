@@ -122,8 +122,6 @@
         });
     });
 
-    console.log(panels);
-
     var x = d3.scale.ordinal().rangeRoundBands([0, width], 0.1).domain(d3.range(EPISODES.length));
     var y = d3.scale.ordinal().rangeRoundBands([0, height], 0.1).domain(panelist_names)
 
