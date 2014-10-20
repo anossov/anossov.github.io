@@ -8,12 +8,12 @@ soup = BeautifulSoup(requests.get('http://en.wikipedia.org/wiki/List_of_QI_episo
 episodes = []
 panelists = defaultdict(list)
 
-for series in soup.find_all('h3'):
+for series in soup.find_all('h2'):
     sspan = series.span
     if sspan is None:
         continue
     series_title = sspan.string
-    if 'Pilot' not in series_title and 'Series' not in series_title or 'Series L' in series_title:
+    if 'Pilot' not in series_title and 'Series' not in series_title:
         continue
 
     episodes_table = series.find_next_sibling('table')
@@ -27,7 +27,7 @@ for series in soup.find_all('h3'):
             et.find('sup').extract()
 
         episode_title = ''.join(et.stripped_strings).replace('"', '')
-        if 'QI VG' in episode_title or 'Compilation' in episode_title:
+        if 'QI VG' in episode_title or 'Compilation' in episode_title or not episode_title:
             continue
 
         ep = episode_title
@@ -45,8 +45,6 @@ for series in soup.find_all('h3'):
 
 panelists['Alan Davies'] = [e for e in episodes if e != 'Divination']
 panelist_data = [{'name': k, 'episodes': [episodes.index(e) for e in v]} for k, v in panelists.items()]
-
-episodes.append('L series placeholder')
 
 print 'var EPISODES = {};'.format(json.dumps(episodes, indent=4))
 print 'var PANELISTS = {};'.format(json.dumps(panelist_data, indent=4))
