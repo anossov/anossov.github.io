@@ -131,6 +131,8 @@
     var first_letter = function (d) {
         if (d[1].substr(0, 3) == 'The') {
             return d[1][4];
+        } else if (d[1].substr(0, 3) == 'No-') {
+            return d[1][4];
         } else {
             return d[1][0];
         }
