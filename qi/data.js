@@ -8,11 +8,11 @@ var EPISODES = [
     "Antidotes", 
     "Arthropods", 
     "Albania", 
-    "Africa", 
+    "Antelopes", 
     "Aviation", 
     "Arts", 
-    "Advent (Christmas Special)",
-    "Blue",
+    "Advent", 
+    "Blue", 
     "Birds", 
     "Bombs", 
     "Bible", 
@@ -23,7 +23,7 @@ var EPISODES = [
     "Bats", 
     "Bills", 
     "Beats", 
-    "Birth (Christmas Special)",
+    "Birth", 
     "Campanology", 
     "Cummingtonite", 
     "Common Knowledge", 
@@ -40,15 +40,15 @@ var EPISODES = [
     "Discoveries", 
     "Dogs", 
     "Dictionaries", 
-    "Death (Hallowe'en Special)",
+    "Death", 
     "Drinks", 
     "Differences", 
-    "Descendants (Children in Need Special)",
+    "Descendants", 
     "Doves", 
     "Divination", 
     "Denial and Deprivation", 
     "Domesticity", 
-    "December (Christmas Special)",
+    "December", 
     "Engineering", 
     "Electricity", 
     "Eating", 
@@ -57,12 +57,12 @@ var EPISODES = [
     "Everything, Etc.", 
     "Espionage", 
     "Eyes and Ears", 
-    "Entertainment (Children in Need Special)",
+    "Entertainment", 
     "England", 
     "Endings", 
-    "Empire (Christmas Special)",
-    "Families (Children in Need Special)",
-    "Fire and Freezing (Christmas Special)",
+    "Empire", 
+    "Families", 
+    "Fire and Freezing", 
     "Flotsam and Jetsam", 
     "Fight or Flight", 
     "France", 
@@ -77,7 +77,7 @@ var EPISODES = [
     "G-Animals", 
     "Games", 
     "Geography", 
-    "Groovy (Christmas Special)",
+    "Groovy", 
     "Genius", 
     "Girls and Boys", 
     "Germany", 
@@ -95,14 +95,14 @@ var EPISODES = [
     "Humans", 
     "Hanimals", 
     "Happiness", 
-    "Horrible (Halloween Special)",
+    "Horrible", 
     "Hypothetical", 
     "House and Home", 
     "Health and Safety", 
     "Highs and Lows", 
     "Horses & Hunting", 
     "Holidays", 
-    "Hocus Pocus (Christmas Special)",
+    "Hocus Pocus", 
     "Hypnosis, Hallucinations & Hysteria", 
     "History", 
     "I-Spy", 
@@ -118,7 +118,7 @@ var EPISODES = [
     "Infantile", 
     "Illumination", 
     "Intelligence", 
-    "Ice (Christmas Special)",
+    "Ice", 
     "The Immortal Bard", 
     "Idleness", 
     "Jargon", 
@@ -134,7 +134,7 @@ var EPISODES = [
     "Jumpers", 
     "Justice", 
     "Jobs", 
-    "Jingle Bells (Christmas Special)",
+    "Jingle Bells", 
     "Jolly", 
     "Just the Job", 
     "Knees and Knockers", 
@@ -150,7 +150,7 @@ var EPISODES = [
     "Kinky", 
     "Knights and Knaves", 
     "Kitchen Sink", 
-    "Kris Kringle (Christmas Special)",
+    "Kris Kringle", 
     "Kitsch", 
     "Kaleidoscope", 
     "L-Animals", 
@@ -162,13 +162,29 @@ var EPISODES = [
     "Lethal", 
     "Lovely", 
     "Ladies and Gents", 
-    "Lies", 
+    "Lying", 
     "Lumped Together", 
-    "No-L (Christmas Special)", 
+    "No-L", 
     "Lucky Losers", 
     "Little and Large", 
     "Long Lost", 
-    "Landmarks",
+    "Landmarks", 
+    "Maladies", 
+    "Medieval and Macabre", 
+    "M episode No. 3, title TBA", 
+    "M episode No. 4, title TBA", 
+    "M episode No. 5, title TBA", 
+    "M episode No. 6, title TBA", 
+    "M episode No. 7, title TBA", 
+    "M episode No. 8, title TBA", 
+    "Misconceptions", 
+    "Monsters", 
+    "Mix and Match", 
+    "Mind", 
+    "Military", 
+    "M episode No. 14, title TBA", 
+    "M episode No. 15, title TBA", 
+    "M episode No. 16, title TBA",
     "N series placeholder"
 ];
 var PANELISTS = [
@@ -183,7 +199,9 @@ var PANELISTS = [
             140, 
             157, 
             158, 
-            161
+            161, 
+            179, 
+            181
         ], 
         "name": "Josh Widdicombe"
     }, 
@@ -215,6 +233,13 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
+            177, 
+            184
+        ], 
+        "name": "Cariad Lloyd"
+    }, 
+    {
+        "episodes": [
             66, 
             82
         ], 
@@ -237,7 +262,8 @@ var PANELISTS = [
         "episodes": [
             138, 
             159, 
-            163
+            163, 
+            179
         ], 
         "name": "Sara Pascoe"
     }, 
@@ -262,7 +288,10 @@ var PANELISTS = [
             149, 
             152, 
             157, 
-            162
+            162, 
+            172, 
+            173, 
+            178
         ], 
         "name": "Sue Perkins"
     }, 
@@ -285,6 +314,12 @@ var PANELISTS = [
             47
         ], 
         "name": "Mark Steel"
+    }, 
+    {
+        "episodes": [
+            185
+        ], 
+        "name": "Eddie Kadi"
     }, 
     {
         "episodes": [
@@ -315,7 +350,9 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
-            139
+            139, 
+            184, 
+            185
         ], 
         "name": "Noel Fielding"
     }, 
@@ -325,7 +362,9 @@ var PANELISTS = [
             134, 
             135, 
             147, 
-            154
+            154, 
+            181, 
+            185
         ], 
         "name": "Sarah Millican"
     }, 
@@ -353,6 +392,12 @@ var PANELISTS = [
             40
         ], 
         "name": "Rory Bremner"
+    }, 
+    {
+        "episodes": [
+            180
+        ], 
+        "name": "James Acaster"
     }, 
     {
         "episodes": [
@@ -574,9 +619,37 @@ var PANELISTS = [
             166, 
             167, 
             168, 
-            169
+            169, 
+            170, 
+            171, 
+            172, 
+            173, 
+            174, 
+            175, 
+            176, 
+            177, 
+            178, 
+            179, 
+            180, 
+            181, 
+            182, 
+            183, 
+            184, 
+            185
         ], 
         "name": "Alan Davies"
+    }, 
+    {
+        "episodes": [
+            182
+        ], 
+        "name": "Sheila Hancock"
+    }, 
+    {
+        "episodes": [
+            184
+        ], 
+        "name": "Rhod Gilbert"
     }, 
     {
         "episodes": [
@@ -626,7 +699,11 @@ var PANELISTS = [
             147, 
             159, 
             160, 
-            165
+            165, 
+            172, 
+            175, 
+            180, 
+            183
         ], 
         "name": "Bill Bailey"
     }, 
@@ -668,7 +745,8 @@ var PANELISTS = [
             139, 
             141, 
             154, 
-            162
+            162, 
+            170
         ], 
         "name": "Ross Noble"
     }, 
@@ -719,7 +797,9 @@ var PANELISTS = [
             146, 
             151, 
             158, 
-            169
+            169, 
+            175, 
+            180
         ], 
         "name": "Jo Brand"
     }, 
@@ -780,6 +860,12 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
+            172
+        ], 
+        "name": "Romesh Ranganathan"
+    }, 
+    {
+        "episodes": [
             46
         ], 
         "name": "Graeme Garden"
@@ -796,6 +882,12 @@ var PANELISTS = [
             145
         ], 
         "name": "Isy Suttie"
+    }, 
+    {
+        "episodes": [
+            174
+        ], 
+        "name": "Danny Bhoy"
     }, 
     {
         "episodes": [
@@ -831,7 +923,8 @@ var PANELISTS = [
             148, 
             153, 
             160, 
-            166
+            166, 
+            176
         ], 
         "name": "Sandi Toksvig"
     }, 
@@ -851,7 +944,8 @@ var PANELISTS = [
     {
         "episodes": [
             126, 
-            153
+            153, 
+            176
         ], 
         "name": "Susan Calman"
     }, 
@@ -944,7 +1038,8 @@ var PANELISTS = [
             121, 
             137, 
             142, 
-            166
+            166, 
+            182
         ], 
         "name": "Jeremy Clarkson"
     }, 
@@ -965,6 +1060,12 @@ var PANELISTS = [
             108
         ], 
         "name": "John Bishop"
+    }, 
+    {
+        "episodes": [
+            181
+        ], 
+        "name": "Tommy Tiernan"
     }, 
     {
         "episodes": [
@@ -1003,10 +1104,22 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
+            183
+        ], 
+        "name": "Jenny Eclair"
+    }, 
+    {
+        "episodes": [
             124, 
             127
         ], 
         "name": "Cal Wilson"
+    }, 
+    {
+        "episodes": [
+            173
+        ], 
+        "name": "Sami Shah"
     }, 
     {
         "episodes": [
@@ -1095,7 +1208,9 @@ var PANELISTS = [
             140, 
             151, 
             158, 
-            167
+            167, 
+            177, 
+            179
         ], 
         "name": "Phill Jupitus"
     }, 
@@ -1104,6 +1219,13 @@ var PANELISTS = [
             46
         ], 
         "name": "Johnny Vaughan"
+    }, 
+    {
+        "episodes": [
+            170, 
+            171
+        ], 
+        "name": "Matt Lucas"
     }, 
     {
         "episodes": [
@@ -1156,6 +1278,12 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
+            175
+        ], 
+        "name": "Greg Davies"
+    }, 
+    {
+        "episodes": [
             131
         ], 
         "name": "Greg Proops"
@@ -1180,6 +1308,12 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
+            177
+        ], 
+        "name": "Dermot O'Leary"
+    }, 
+    {
+        "episodes": [
             101
         ], 
         "name": "Clare Balding"
@@ -1193,7 +1327,8 @@ var PANELISTS = [
     {
         "episodes": [
             130, 
-            136
+            136, 
+            171
         ], 
         "name": "Julia Zemiro"
     }, 
@@ -1215,7 +1350,8 @@ var PANELISTS = [
             110, 
             128, 
             148, 
-            155
+            155, 
+            183
         ], 
         "name": "Johnny Vegas"
     }, 
@@ -1266,7 +1402,8 @@ var PANELISTS = [
     {
         "episodes": [
             96, 
-            117
+            117, 
+            178
         ], 
         "name": "Chris Addison"
     }, 
@@ -1367,7 +1504,9 @@ var PANELISTS = [
             152, 
             164, 
             165, 
-            168
+            168, 
+            174, 
+            182
         ], 
         "name": "Jimmy Carr"
     }, 
@@ -1436,20 +1575,25 @@ var PANELISTS = [
             138, 
             141, 
             164, 
-            169
+            169, 
+            171, 
+            173
         ], 
         "name": "David Mitchell"
     }, 
     {
         "episodes": [
-            167
+            167, 
+            170
         ], 
         "name": "Lucy Porter"
     }, 
     {
         "episodes": [
             155, 
-            161
+            161, 
+            174, 
+            176
         ], 
         "name": "Aisling Bea"
     }, 
@@ -1460,6 +1604,12 @@ var PANELISTS = [
             159
         ], 
         "name": "The Rev. Richard Coles"
+    }, 
+    {
+        "episodes": [
+            178
+        ], 
+        "name": "Sara Cox"
     }, 
     {
         "episodes": [

@@ -16,25 +16,33 @@ for series in soup.find_all('h2'):
     if 'Pilot' not in series_title and 'Series' not in series_title:
         continue
 
+    series_letter = series_title[series_title.find(':') - 1]
+
     episodes_table = series.find_next_sibling('table')
+    i = 1
     for episode in episodes_table.find_all('tr'):
         fields = episode.find_all('td')
         if len(fields) < 2:
             continue
 
         et = fields[0]
-        if et.find('sup'):
+        while et.find('sup'):
             et.find('sup').extract()
 
         episode_title = ''.join(et.stripped_strings).replace('"', '')
         if 'QI VG' in episode_title or 'Compilation' in episode_title or not episode_title:
             continue
 
-        ep = episode_title
-        episodes.append(ep)
+        if 'Compilation' in ''.join(fields[1].stripped_strings):
+            continue
 
+        ep = episode_title
+        if ep == 'TBA':
+            ep = '{} episode No. {}, title TBA'.format(series_letter, i)
+        episodes.append(ep)
+        i += 1
         ps = fields[1]
-        if ps.find('sup'):
+        while ps.find('sup'):
             ps.find('sup').extract()
         for panelist in ps.strings:
             p = panelist.strip()
