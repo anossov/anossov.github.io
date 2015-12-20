@@ -176,16 +176,16 @@ var EPISODES = [
     "Maths", 
     "Marriage and Mating", 
     "Middle Muddle", 
-    "Mind", 
-    "Meals", 
+    "Merriment", 
+    "Messing With Your Mind", 
+    "Making a Meal of It", 
     "Menagerie", 
     "Medieval", 
-    "Merriment", 
     "Monsters", 
     "Messy", 
     "Mix and Match", 
     "Misconceptions",
-    "N series placeholder",
+    "N series placeholder"
 ];
 var PANELISTS = [
     {
@@ -200,7 +200,7 @@ var PANELISTS = [
             157, 
             158, 
             161, 
-            177, 
+            178, 
             182
         ], 
         "name": "Josh Widdicombe"
@@ -234,7 +234,7 @@ var PANELISTS = [
     {
         "episodes": [
             173, 
-            178
+            179
         ], 
         "name": "Cariad Lloyd"
     }, 
@@ -290,7 +290,7 @@ var PANELISTS = [
             157, 
             162, 
             172, 
-            179, 
+            180, 
             185
         ], 
         "name": "Sue Perkins"
@@ -363,7 +363,7 @@ var PANELISTS = [
             135, 
             147, 
             154, 
-            177, 
+            178, 
             183
         ], 
         "name": "Sarah Millican"
@@ -701,8 +701,8 @@ var PANELISTS = [
             160, 
             165, 
             175, 
-            179, 
-            181, 
+            177, 
+            180, 
             184
         ], 
         "name": "Bill Bailey"
@@ -860,7 +860,7 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
-            179
+            180
         ], 
         "name": "Romesh Ranganathan"
     }, 
@@ -1063,7 +1063,7 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
-            177
+            178
         ], 
         "name": "Tommy Tiernan"
     }, 
@@ -1104,7 +1104,7 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
-            181
+            177
         ], 
         "name": "Jenny Eclair"
     }, 
@@ -1209,7 +1209,7 @@ var PANELISTS = [
             151, 
             158, 
             167, 
-            178, 
+            179, 
             182
         ], 
         "name": "Phill Jupitus"
@@ -1223,7 +1223,7 @@ var PANELISTS = [
     {
         "episodes": [
             170, 
-            180
+            181
         ], 
         "name": "Matt Lucas"
     }, 
@@ -1308,7 +1308,7 @@ var PANELISTS = [
     }, 
     {
         "episodes": [
-            178
+            179
         ], 
         "name": "Dermot O'Leary"
     }, 
@@ -1328,7 +1328,7 @@ var PANELISTS = [
         "episodes": [
             130, 
             136, 
-            180
+            181
         ], 
         "name": "Julia Zemiro"
     }, 
@@ -1351,7 +1351,7 @@ var PANELISTS = [
             128, 
             148, 
             155, 
-            181
+            177
         ], 
         "name": "Johnny Vegas"
     }, 
@@ -1577,7 +1577,7 @@ var PANELISTS = [
             164, 
             169, 
             172, 
-            180
+            181
         ], 
         "name": "David Mitchell"
     }, 
