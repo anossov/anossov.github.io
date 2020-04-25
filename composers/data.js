@@ -132,7 +132,7 @@ const COMPOSERS = [
     "64"
   ],
   [
-    "Tomaso Albioni",
+    "Tomaso Albinoni",
     "1671",
     "1751",
     "79"
@@ -174,7 +174,7 @@ const COMPOSERS = [
     "74"
   ],
   [
-    "JS Bach",
+    "Johann Sebastian Bach",
     "1685",
     "1750",
     "65"
@@ -210,13 +210,13 @@ const COMPOSERS = [
     "26"
   ],
   [
-    "WF Bach",
+    "Wilhelm Friedemann Bach",
     "1710",
     "1784",
     "73"
   ],
   [
-    "CPE Bach",
+    "Carl Philipp Emanuel Bach",
     "1714",
     "1788",
     "74"
@@ -234,7 +234,7 @@ const COMPOSERS = [
     "77"
   ],
   [
-    "JC Bach",
+    "Johann Christian Bach",
     "1735",
     "1782",
     "46"
@@ -426,7 +426,7 @@ const COMPOSERS = [
     "76"
   ],
   [
-    "Bedrich Smetana",
+    "Bedřich Smetana",
     "1824",
     "1884",
     "60"
