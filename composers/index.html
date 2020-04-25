@@ -5,11 +5,11 @@
 <style>
     body {
         font-family: Georgia, serif;
+        font-variant-ligatures: discretionary-ligatures;
     }
 
     text {
         font-size: 20px;
-        font-family: Georgia, serif;
     }
 
     .year {
@@ -70,20 +70,6 @@
 
     composer.append('rect')
         .attr('shape-rendering', 'crispEdges')
-        .attr('y', 4)
-        .attr('x', d => x(d[1]))
-        .attr('height', row_height - 8)
-        .attr('width', 1);
-
-    composer.append('rect')
-        .attr('shape-rendering', 'crispEdges')
-        .attr('y', 4)
-        .attr('x', d => x(d[2]))
-        .attr('height', row_height - 8)
-        .attr('width', 1);
-
-    composer.append('rect')
-        .attr('shape-rendering', 'crispEdges')
         .attr('y', row_height / 2)
         .attr('x', d => x(d[1]))
         .attr('height', 1)
@@ -92,7 +78,7 @@
     composer.append('text')
         .attr('text-anchor', 'end')
         .attr("dominant-baseline", "hanging")
-        .attr('x', d => x(d[2]) - 3)
+        .attr('x', d => x(d[2]))
         .attr('y', row_height / 2 + 1)
         .attr('class', 'year')
         .text(d => d[2]);
@@ -100,7 +86,7 @@
     composer.append('text')
         .attr('text-anchor', 'start')
         .attr("dominant-baseline", "baseline")
-        .attr('x', d => x(d[1]) + 3)
+        .attr('x', d => x(d[1]))
         .attr('y', row_height / 2 - 2)
         .attr('class', 'year')
         .text(d => d[1]);
